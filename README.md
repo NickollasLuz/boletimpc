@@ -1,6 +1,11 @@
-# Inventário de PCs — aplicativo para celular
+# Inventário de PCs — Central de TI
 
 Aplicação web responsiva/PWA para cadastro e consulta do inventário de computadores, organizada por seção.
+
+## Interface
+- **Celular:** mantém a navegação inferior e o layout compacto original.
+- **Computador:** interface ampliada com menu lateral, cabeçalho fixo, cartões organizados em colunas e formulários mais espaçosos.
+- A adaptação de desktop entra automaticamente em telas com largura a partir de 1024 px.
 
 ## Recursos
 - Seções com quantidade de PCs.
@@ -10,23 +15,23 @@ Aplicação web responsiva/PWA para cadastro e consulta do inventário de comput
 - Pesquisa dentro da seção.
 - Boletim da seção com todos os computadores.
 - Impressão do boletim / opção do navegador para salvar como PDF.
-- Compartilhamento do boletim pelo celular.
+- Compartilhamento do boletim.
 - Backup e restauração em JSON.
 - Banco local no navegador (IndexedDB), sem necessidade de servidor de banco para uso local.
-- Dados iniciais carregados a partir do arquivo de inventário fornecido.
+- Dados iniciais carregados a partir do inventário fornecido.
 
-## Abrir no celular
-### Opção 1 — Hospedar em qualquer site
-Envie o conteúdo desta pasta para uma hospedagem de site estático (HTTPS). Abra o endereço no Chrome/Safari e use a opção de instalar/adicionar à tela inicial.
+## Como abrir
+### Hospedar em um site
+Envie os arquivos da pasta para uma hospedagem de site estático com HTTPS. Abra o endereço no navegador e use a opção de instalar/adicionar à tela inicial, se desejar.
 
-### Opção 2 — Servir na rede local usando o computador
-Com Python 3 instalado no PC que hospedará a aplicação:
+### Servir na rede local usando um computador
+Com Python 3 instalado no computador que hospedará a aplicação, abra o terminal na pasta e execute:
 
-    python -m http.server 8000 --directory .
+    python -m http.server 8000
 
-Depois abra no celular o endereço `http://IP_DO_PC:8000` estando na mesma rede.
+Depois acesse `http://IP_DO_PC:8000` em outro dispositivo da mesma rede.
 
-Para os recursos completos de PWA/instalação, a publicação em HTTPS é recomendada.
+Para a instalação PWA e o funcionamento completo do service worker, prefira HTTPS ou localhost.
 
-## Observação sobre os dados
-Os dados iniciais preservam os campos informados no arquivo fornecido. Informações que não constavam no documento ficam vazias para preenchimento manual.
+## Dados
+Os dados iniciais preservam os campos que estavam informados na base original. Informações não disponíveis ficam vazias para preenchimento manual. Os dados cadastrados ficam no armazenamento local do navegador; exporte um backup JSON para transportá-los para outro dispositivo.
