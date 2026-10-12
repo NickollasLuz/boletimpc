@@ -10,27 +10,33 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon.svg">
-  <title>Inventário de PCs GAP-BE</title>
+  <title>Inventário de PCs — Central de TI</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <div>
-      <div class="eyebrow">ATIC</div>
-      <h1 id="pageTitle">Seções</h1>
+      <div class="eyebrow">CENTRAL DE TI</div>
+      <h1 id="pageTitle">Inventário de PCs</h1>
     </div>
-    <button class="icon-btn" id="homeBtn" aria-label="Início">⌂</button>
+    <div class="top-actions">
+      <button class="icon-btn" id="homeBtn" aria-label="Início" title="Início">⌂</button>
+      <button class="btn btn-logout" id="logoutBtn" hidden>Sair</button>
+    </div>
   </header>
 
-  <main id="app" class="app-shell"></main>
+  <main id="app" class="app-shell" aria-live="polite"></main>
 
-  <nav class="bottom-nav" aria-label="Navegação">
+  <nav class="bottom-nav" aria-label="Navegação" hidden>
     <button data-nav="home" class="active"><span>▦</span><small>Seções</small></button>
+    <button data-nav="updates"><span>◷</span><small>Atualizações</small></button>
     <button data-nav="add"><span>＋</span><small>Novo PC</small></button>
     <button data-nav="backup"><span>↕</span><small>Backup</small></button>
   </nav>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
